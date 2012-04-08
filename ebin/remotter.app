@@ -8,6 +8,6 @@
  ]},
  {registered, [remotter_sup]},
  {applications, [kernel, stdlib]},
- {mod, {remotter, []}}
+ {mod, {remotter_app, []}}
 ]}.
 
