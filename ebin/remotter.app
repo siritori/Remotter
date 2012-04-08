@@ -4,7 +4,9 @@
  {modules, [
    remotter_app,
    remotter_sup,
-   remotter_server
+   remotter_server,
+   oauth,
+   userstream_server
  ]},
  {registered, [remotter_sup]},
  {applications, [kernel, stdlib]},
