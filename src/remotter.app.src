@@ -1,13 +1,6 @@
 {application, remotter,
 [{description, "Remote interface for Twitter"},
- {vsn, "0.1.1"},
- {modules, [
-   remotter_app,
-   remotter_sup,
-   remotter_server,
-   oauth,
-   userstream_server
- ]},
+ {vsn, git},
  {registered, [remotter_sup]},
  {applications, [kernel, stdlib]},
  {mod, {remotter_app, []}}
