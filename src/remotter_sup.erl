@@ -23,5 +23,8 @@ init([]) ->
    UserstreamServer = {userstream_server, {userstream_server, start_link,
          [{remotter_server, handle_part}, ?ACCESS_TOKEN, ?TOKEN_SECRET]},
       permanent, 10000, worker, [userstream_server]},
-   {ok, {RestartStrategy, [RemotterServer, UserstreamServer]}}.
+   RemoteIOServer = {remote_io, {remote_io, start_link, []},
+      permanent, 10000, worker, [remote_io]},
+   Children = [RemotterServer, UserstreamServer, RemoteIOServer],
+   {ok, {RestartStrategy, Children}}.
 
